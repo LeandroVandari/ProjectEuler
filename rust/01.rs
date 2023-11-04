@@ -1,4 +1,0 @@
-fn main(){
-    let result: i32 = (1..1000).filter(|num| num % 3 == 0 || num % 5 == 0).sum();
-    println!("{result}");
-}
