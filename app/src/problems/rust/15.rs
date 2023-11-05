@@ -12,11 +12,13 @@ fn main() {
     while num != final_num {
         for i in 1..=GRID_SIZE {
             if num & (1 << i) != 0 {
+                
                 if num & (1 << (i-1)) == 0 {
                     num &= !(1 << i);
                     num |= 1 << (i - 1);
                     count+=1;
                     println!("{num:b}, {final_num:b}");
+                    break
                 }
             }
         }
