@@ -1,4 +1,8 @@
 import os
+try:
+    os.mkdir(os.path.join(os.path.dirname(__file__), "Compiled"))
+except FileExistsError:
+    pass
 for file in os.listdir(os.path.dirname(__file__)):
     if file.endswith(".rs"):
         file_name = file[:-3]

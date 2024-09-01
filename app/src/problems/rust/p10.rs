@@ -1,4 +1,4 @@
-fn main() {
+pub fn solve() -> u128 {
     const UNTIL: u128 = 2000000;
     let mut primes = vec![2, 3];
     let mut sum = 5;
@@ -6,7 +6,9 @@ fn main() {
     for i in (5..=UNTIL).step_by(2) {
         let mut is_prime = true;
         for prime in &primes {
-            if prime > &((i as f64).powf(0.5) as u128) {break;}
+            if prime > &((i as f64).powf(0.5) as u128) {
+                break;
+            }
             if i % prime == 0 {
                 is_prime = false;
                 break;
@@ -18,6 +20,5 @@ fn main() {
         }
     }
 
-    println!("{sum}");
-    
+    sum
 }

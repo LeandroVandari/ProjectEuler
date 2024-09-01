@@ -1,5 +1,5 @@
-fn main() {
-    let mut num: i128 = 600851475143;
+pub fn solve() -> u128 {
+    let mut num: u128 = 600851475143;
     let mut primes = vec![2];
     for i in (3..=600851475143).step_by(2) {
         let mut is_prime = true;
@@ -16,9 +16,9 @@ fn main() {
             }
         }
         if num == 1 {
-            println!("{i}");
-            return;
+            return i;
         }
-
     }
+
+    unreachable!()
 }

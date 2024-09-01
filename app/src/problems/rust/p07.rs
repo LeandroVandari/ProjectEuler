@@ -1,9 +1,9 @@
-fn main() {
-    let mut primes = vec![2, 3];
-    let mut num = 2;
-    let mut last_prime = 3;
+pub fn solve() -> u32 {
+    let mut primes: Vec<u32> = vec![2, 3];
+    let mut num: u32 = 2;
+    let mut last_prime: u32 = 3;
     while num != 10001 {
-        let mut i: i32 = last_prime;
+        let mut i: u32 = last_prime;
         loop {
             let mut is_prime = true;
             i += 2;
@@ -14,15 +14,14 @@ fn main() {
                 if i % prime == 0 {
                     is_prime = false;
                 }
-                
             }
-             if is_prime {
+            if is_prime {
                 primes.push(i);
                 last_prime = i;
-                num +=1;
+                num += 1;
                 break;
             }
         }
     }
-    println!("{}", primes[10000]);
+    primes[10000]
 }

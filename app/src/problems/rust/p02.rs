@@ -1,4 +1,4 @@
-fn main(){
+pub fn solve() -> u32 {
     let mut cur = 1;
     let mut prev = 1;
     let mut sum = 0;
@@ -11,5 +11,5 @@ fn main(){
             sum += cur;
         }
     }
-    println!("{sum}");
+    sum
 }
