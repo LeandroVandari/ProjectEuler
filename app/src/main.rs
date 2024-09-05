@@ -21,6 +21,9 @@ fn main() {
             }
         };
 
-        println!("The answer to this problem is: {}", rust::p01::solve());
+        println!(
+            "The answer to this problem is: {}",
+            rust::problem_map.get(&problem_num).unwrap()()
+        );
     }
 }

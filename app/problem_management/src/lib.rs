@@ -43,19 +43,23 @@ pub fn include_problem(item: pc::TokenStream) -> pc::TokenStream {
     }
     let matchups = p_map.into_iter().map(ProblemTup::new).collect::<Vec<_>>();
     mod_declare.extend(quote! {
-        static problem_map: std::collections::HashMap<u32, fn () -> String> = std::collections::HashMap::from([#(#matchups as _),*]);
+        pub static problem_map: std::sync::LazyLock<std::collections::HashMap<u32, fn () -> String>> = std::sync::LazyLock::new(|| std::collections::HashMap::from([#((#matchups)),*]));
     });
     mod_declare.into()
 }
 
+#[derive(Debug)]
 struct ProblemTup {
     num: u32,
-    ident: proc_macro2::Ident
+    ident: proc_macro2::Ident,
 }
 
 impl ProblemTup {
     fn new(tup: (u32, proc_macro2::Ident)) -> Self {
-        Self { num: tup.0, ident: tup.1 }
+        Self {
+            num: tup.0,
+            ident: tup.1,
+        }
     }
 }
 
@@ -64,7 +68,7 @@ impl ToTokens for ProblemTup {
         let num = self.num;
         let ident = self.ident.clone();
         *tokens = quote! {
-            (#num, #ident::solve)
+            (#num, #ident::solve as _)
         }
     }
 }
