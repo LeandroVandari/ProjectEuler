@@ -43,7 +43,7 @@ pub fn include_problem(item: pc::TokenStream) -> pc::TokenStream {
     }
     let matchups = p_map.into_iter().map(ProblemTup::new).collect::<Vec<_>>();
     mod_declare.extend(quote! {
-        static problem_map: std::collections::HashMap<_> = std::collections::HashMap::from([#(#matchups),*]);
+        static problem_map: std::collections::HashMap<u32, fn () -> String> = std::collections::HashMap::from([#(#matchups as _),*]);
     });
     mod_declare.into()
 }

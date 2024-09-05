@@ -1,4 +1,4 @@
-pub fn solve() -> u128 {
+pub fn solve() -> String {
     const RANGE_END: u32 = 20;
     let primes_to_range_end: Vec<u32> = (2..=RANGE_END)
         .filter(|i| {
@@ -38,5 +38,5 @@ pub fn solve() -> u128 {
         .map(|(prime, amount)| prime.pow(*amount))
         .fold(1u128, |acc, x| acc * x as u128);
 
-    smallest_dividable
+    smallest_dividable.to_string()
 }

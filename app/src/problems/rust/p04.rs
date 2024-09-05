@@ -1,4 +1,4 @@
-pub fn solve() -> u32 {
+pub fn solve() -> String {
     let mut largest_palindrome: u32 = 0;
     for i in 1..=999 {
         for j in i..=999 {
@@ -11,5 +11,5 @@ pub fn solve() -> u32 {
             }
         }
     }
-    largest_palindrome
+    largest_palindrome.to_string()
 }

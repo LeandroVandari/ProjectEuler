@@ -1,4 +1,4 @@
-pub fn solve() -> u32 {
+pub fn solve() -> String {
     let mut primes: Vec<u32> = vec![2, 3];
     let mut num: u32 = 2;
     let mut last_prime: u32 = 3;
@@ -23,5 +23,5 @@ pub fn solve() -> u32 {
             }
         }
     }
-    primes[10000]
+    primes[10000].to_string()
 }

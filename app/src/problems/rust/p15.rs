@@ -1,6 +1,6 @@
-pub fn solve() -> u128 {
+pub fn solve() -> String {
     let mut values = std::collections::HashMap::new();
-    take_step(&mut values, 0, 0)
+    take_step(&mut values, 0, 0).to_string()
 }
 
 fn take_step(

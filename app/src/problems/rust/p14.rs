@@ -1,4 +1,4 @@
-pub fn solve() -> u128 {
+pub fn solve() -> String {
     const UP_UNTIL: u128 = 1000000;
 
     let mut max_amount = 0;
@@ -14,7 +14,7 @@ pub fn solve() -> u128 {
             max_num = i;
         }
     }
-    max_num
+    max_num.to_string()
 }
 
 fn collatz_sequence(num: u128) -> u32 {

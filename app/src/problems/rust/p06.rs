@@ -1,4 +1,4 @@
-pub fn solve() -> u128 {
+pub fn solve() -> String {
     let mut sum_of_squares = 0;
     let mut sum = 0;
 
@@ -8,5 +8,5 @@ pub fn solve() -> u128 {
     }
     let square_of_sum = sum * sum;
 
-    square_of_sum - sum_of_squares
+    (square_of_sum - sum_of_squares).to_string()
 }

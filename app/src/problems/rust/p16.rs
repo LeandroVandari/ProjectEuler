@@ -1,3 +1,3 @@
-pub fn solve() {
+pub fn solve() -> String {
     todo!()
 }

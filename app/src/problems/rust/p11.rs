@@ -1,6 +1,4 @@
-use std::fs;
-pub fn solve() -> u32 {
-    std::env::set_current_dir(std::env::current_exe().unwrap().parent().unwrap()).unwrap();
+pub fn solve() -> String {
     let grid: Vec<Vec<u32>> = include_str!("p11_grid")
         .split('\n')
         .map(|line| {
@@ -56,5 +54,5 @@ pub fn solve() -> u32 {
         }
     }
 
-    biggest_mult
+    biggest_mult.to_string()
 }

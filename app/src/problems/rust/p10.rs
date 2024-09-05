@@ -1,4 +1,4 @@
-pub fn solve() -> u128 {
+pub fn solve() -> String {
     const UNTIL: u128 = 2000000;
     let mut primes = vec![2, 3];
     let mut sum = 5;
@@ -20,5 +20,5 @@ pub fn solve() -> u128 {
         }
     }
 
-    sum
+    sum.to_string()
 }

@@ -35,10 +35,10 @@ static NAMES_MAP: std::sync::LazyLock<HashMap<u32, &str>> = std::sync::LazyLock:
     ])
 });
 
-pub fn solve() -> usize {
+pub fn solve() -> String {
     const MAX_NUM: u32 = 1000;
 
-    (1..=MAX_NUM).fold(0, |acc, x| acc + get_number_name_length(x))
+    (1..=MAX_NUM).fold(0, |acc, x| acc + get_number_name_length(x)).to_string()
 }
 
 fn get_number_name_length(number: u32) -> usize {

@@ -1,11 +1,11 @@
-pub fn solve() -> u128 {
+pub fn solve() -> String {
     let mut current_sum = 1;
     let mut current_num = 1;
     while divisors_amount(current_sum) <= 500 {
         current_num += 1;
         current_sum += current_num;
     }
-    current_sum
+    current_sum.to_string()
 }
 
 fn divisors_amount(num: u128) -> u128 {

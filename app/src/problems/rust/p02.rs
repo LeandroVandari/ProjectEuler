@@ -1,4 +1,4 @@
-pub fn solve() -> u32 {
+pub fn solve() -> String {
     let mut cur = 1;
     let mut prev = 1;
     let mut sum = 0;
@@ -11,5 +11,5 @@ pub fn solve() -> u32 {
             sum += cur;
         }
     }
-    sum
+    sum.to_string()
 }
